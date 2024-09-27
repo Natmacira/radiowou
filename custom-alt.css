@@ -235,4 +235,10 @@ footer p {
     color: white;
 }
 
-.contact-text {}
+/* .contact-text {} */
+
+.div-latest-local-posts-container p{
+    color: #7A7878;
+    font-size: 20px;
+    font-weight: bold;
+}

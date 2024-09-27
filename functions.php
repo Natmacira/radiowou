@@ -76,7 +76,7 @@ function catastrophe_banner_shortcode($atts)
 			return '<p>Post not found.</p>';
 		}
 	} else {
-		return '<p>No post selected.</p>';
+		return ' ';
 	}
 }
 add_shortcode('catastrophe_banner', 'catastrophe_banner_shortcode');
@@ -99,6 +99,9 @@ function latest_three_local_posts() {
 
     // Verificar si hay posts
     if ($query->have_posts()) {
+
+        echo '<div class="div-latest-local-posts-container">';
+        echo '<p>Las noticias del día</p>';
         echo '<div class="latest-local-posts">';
         while ($query->have_posts()) {
             $query->the_post();
@@ -112,6 +115,7 @@ function latest_three_local_posts() {
             echo '</div>'; // Cerrar .post-content
             echo '</a>'; // Cerrar el enlace <a>
         }
+        echo '</div>'; // Cerrar .latest-local-posts
         echo '</div>'; // Cerrar .latest-local-posts
     } else {
         echo '<p>No recent posts in the Local category.</p>';
