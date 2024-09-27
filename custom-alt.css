@@ -3,6 +3,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+@media (min-width:770px) {
+    #player-header {
+        flex-direction: row;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 #player-header h4 {
@@ -53,11 +67,30 @@
 }
 
 div.catastrophe-image img {
-    padding-right: 20px;
+    max-width: 325px;
+    margin-bottom: 15px;
+
 }
 
-.qodef-wrapper {
-    top: -25px;
+@media (min-width:770px) {
+    div.catastrophe-image img {
+        padding-right: 20px;
+        max-width: 100%;
+        margin-bottom: 0;
+
+    }
+}
+
+.catastrophe-content {
+    margin-left: -77px;
+
+}
+
+@media (min-width:770px) {
+    .catastrophe-content {
+        margin-left: 0;
+
+    }
 }
 
 .banner-home-container .vc_column-inner {
@@ -154,8 +187,26 @@ div.catastrophe-image img {
 }
 
 .catastrophe-banner.last-program img {
-    max-width: 400px;
+    max-width: 280px;
 }
+
+@media (min-width:770px) {
+    .catastrophe-banner.last-program img {
+        max-width: 400px;
+    }
+}
+
+.catastrophe-banner.last-program .catastrophe-content {
+    margin-left: 0px;
+
+}
+
+/* @media (min-width:770px) {
+    .catastrophe-content.last-program {
+        margin-left: 0;
+
+    }
+} */
 
 .catastrophe-banner.last-program div.catastrophe-image p {
     font-size: 20px;
@@ -165,3 +216,23 @@ div.catastrophe-image img {
 .catastrophe-banner.last-program div.catastrophe-image {
     padding: 0 25px;
 }
+
+/* .qodef-mobile-header .qodef-mobile-header-inner .qodef-mobile-header-holder {
+    top: 85px;
+} */
+
+footer .wp-block-image.social-media-icons {
+    width: 40px;
+    margin: 0 auto;
+}
+
+footer .follow-us {
+    font-size: 20px;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+}
+
+.contact-text {}

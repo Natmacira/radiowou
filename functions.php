@@ -7,9 +7,11 @@ function dhd_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'dhd_enqueue_styles');
 
 function agregar_shortcode_al_header() {
-    echo do_shortcode('[<div style="text-align: center; width: 100%;" id="player-header">
-  <h4 class="qodef-widget-title">Escuchá WOU RADIO en vivo!</h4>
-	<h4 class="qodef-widget-title">[radio_player id="58996"]</h4></div>]'); 
+    echo '<div style="text-align: center; width: 100%;" id="player-header">';
+    echo '<h4 class="qodef-widget-title">Escuchá WOU RADIO en vivo!</h4>';
+    echo '<h4 class="qodef-widget-title">';
+    echo do_shortcode('[radio_player id="58996"]');
+    echo '</h4></div>'; 
 }
 add_action('wp_head', 'agregar_shortcode_al_header');
 
