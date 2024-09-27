@@ -19,16 +19,36 @@
 }
 
 .catastrophe-banner {
-    background-color: #01236AE5;
+    background: linear-gradient(to bottom,
+            #01236AE5 70%,
+            /* El color oscuro predomina en el 70% del fondo */
+            rgba(1, 35, 106, 0.8) 85%,
+            /* Aclarado sutil en el último tercio */
+            rgba(1, 35, 106, 0.6) 95%,
+            /* Un poco más claro hacia el final */
+            rgba(1, 35, 106, 0.5) 100%
+            /* Degradado suave en el borde final */
+        );
+
     margin: 0 -1000px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     padding: 25px 0;
     position: relative;
     top: -85px;
     padding-top: 75px;
 
+}
+
+@media (min-width:770px) {
+    .catastrophe-banner {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-direction: row;
+    }
 }
 
 .catastrophe-banner h2,
@@ -95,13 +115,25 @@ div.catastrophe-image img {
         justify-content: space-between;
         margin-bottom: 25px;
     }
+
     .latest-local-posts .post {
         width: calc(33.33% - 10px);
         margin-right: 5x;
         margin-left: 5x;
         background-size: cover;
         background-position: center;
-        height: 300px;
-        position: relative;
+        margin-bottom: 0;
     }
+}
+
+/*MENU*/
+
+.menu-main-menu .item_text {
+    font-size: 20px;
+    color: white;
+}
+
+.qodef-header-vertical .qodef-vertical-menu>ul>li>a span.item_text {
+    font-size: 20px;
+    color: white;
 }

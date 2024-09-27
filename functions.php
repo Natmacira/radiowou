@@ -124,3 +124,70 @@ function latest_three_local_posts() {
 
 // Registrar el shortcode
 add_shortcode('latest_local_posts', 'latest_three_local_posts');
+
+// Register the shortcode
+function custom_banner_shortcode($atts)
+{
+    // Define attributes and set defaults
+    $atts = shortcode_atts(array(
+        'title' => '',        // The title entered by the client
+        'link' => '',         // The URL to link to
+        'image' => '',        // The image URL
+        'date' => '',         // The date (optional)
+        'excerpt' => '',      // Manual excerpt
+        'youtube_url' => '',  // YouTube link
+    ), $atts, 'custom_banner');
+
+    // Build the banner output
+    $output = '<div class="catastrophe-banner">';
+
+    // Image on the left (70%) and linked to the provided link
+    if (!empty($atts['image'])) {
+        $output .= '<div class="catastrophe-image" style="float: left;">';
+        $output .= '<a href="' . esc_url($atts['link']) . '">';
+        $output .= '<img src="' . esc_url($atts['image']) . '" alt="' . esc_attr($atts['title']) . '">';
+        $output .= '</a>';
+        $output .= '</div>';
+    }
+
+    // Content on the right (30%)
+    $output .= '<div class="catastrophe-content">';
+
+    // YouTube button
+    if (!empty($atts['youtube_url'])) {
+        $output .= '<a href="' . esc_url($atts['youtube_url']) . '" class="catastrophe-youtube-btn" target="_blank">';
+        $output .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/play-btn.png') . '" alt="Watch on YouTube">';
+        $output .= '</a>';
+    }
+
+    // Title with link
+    if (!empty($atts['title'])) {
+        $output .= '<h2 class="catastrophe-title"><a href="' . esc_url($atts['link']) . '">' . esc_html($atts['title']) . '</a></h2>';
+    }
+
+    // Date (optional)
+    if (!empty($atts['date'])) {
+        $output .= '<p class="catastrophe-date">' . esc_html($atts['date']) . '</p>';
+    }
+
+    // Excerpt
+    if (!empty($atts['excerpt'])) {
+        $output .= '<p class="catastrophe-excerpt">' . esc_html($atts['excerpt']) . '</p>';
+    }
+
+    $output .= '</div>'; // End content div
+    $output .= '<div style="clear: both;"></div>'; // Clear floats
+    $output .= '</div>'; // End banner div
+
+    return $output;
+}
+add_shortcode('custom_banner', 'custom_banner_shortcode');
+
+
+// [custom_banner 
+//     title="Custom Title" 
+//     link="https://example.com" 
+//     image="https://example.com/image.jpg" 
+//     date="September 25, 2024" 
+//     excerpt="This is a custom excerpt for the banner." 
+//     youtube_url="https://youtube.com/watch?v=example"]
