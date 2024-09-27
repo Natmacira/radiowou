@@ -1,11 +1,17 @@
 <?php
 // Cargar otros estilos adicionales
 // wp_enqueue_style('skeleton-style', QODE_ASSETS_ROOT . '/css/custom-alt.css');
-wp_enqueue_style('custom-alt-style', get_stylesheet_directory_uri() . 'css/custom-alt.css', array('child-style'));
+function dhd_enqueue_styles() {	
+	wp_enqueue_style('customalt-style', get_stylesheet_directory_uri() . '/custom-alt.css');
+}
+add_action('wp_enqueue_scripts', 'dhd_enqueue_styles');
 
-
-
-/// custom ALT
+function agregar_shortcode_al_header() {
+    echo do_shortcode('[<div style="text-align: center; width: 100%;" id="player-header">
+  <h4 class="qodef-widget-title">Escuchá WOU RADIO en vivo!</h4>
+	<h4 class="qodef-widget-title">[radio_player id="58996"]</h4></div>]'); 
+}
+add_action('wp_head', 'agregar_shortcode_al_header');
 
 // Register the shortcode
 function catastrophe_banner_shortcode($atts)
@@ -34,19 +40,21 @@ function catastrophe_banner_shortcode($atts)
 			$output = '<div class="catastrophe-banner">';
 
 			// Image on the left (70%) and linked to the post
-			$output .= '<div class="catastrophe-image" style="float: left; width: 70%;">';
+			$output .= '<div class="catastrophe-image" style="float: left;">';
 			$output .= '<a href="' . esc_url($link) . '">';
 			$output .= '<img src="' . esc_url($image) . '" alt="' . esc_attr($title) . '">';
 			$output .= '</a>';
 			$output .= '</div>';
 
 			// Content on the right (30%)
-			$output .= '<div class="catastrophe-content" style="float: right; width: 30%;">';
+			$output .= '<div class="catastrophe-content">';
 
-			// YouTube button above the title
 			if (!empty($atts['youtube_url'])) {
-				$output .= '<a href="' . esc_url($atts['youtube_url']) . '" class="catastrophe-youtube-btn" target="_blank">Watch on YouTube</a>';
+				$output .= '<a href="' . esc_url($atts['youtube_url']) . '" class="catastrophe-youtube-btn" target="_blank">';
+				$output .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/play-btn.png') . '" alt="Watch on YouTube">';
+				$output .= '</a>';
 			}
+			
 
 			// Title with link
 			$output .= '<h2 class="catastrophe-title"><a href="' . esc_url($link) . '">' . esc_html($title) . '</a></h2>';
