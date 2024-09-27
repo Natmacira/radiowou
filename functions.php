@@ -81,3 +81,46 @@ add_shortcode('catastrophe_banner', 'catastrophe_banner_shortcode');
 
 // example of shortcode to use in the html block
 // [catastrophe_banner post_id="123" excerpt="Custom excerpt" youtube_url="https://www.youtube.com/watch?v=example"]
+
+function latest_three_local_posts() {
+    // Argumentos para la consulta de los últimos 3 posts de la categoría 'local'
+    $args = array(
+        'category_name' => 'locales',
+        'posts_per_page' => 3,
+    );
+
+    // Realizar la consulta
+    $query = new WP_Query($args);
+
+    // Comenzar el buffer de salida
+    ob_start();
+
+    // Verificar si hay posts
+    if ($query->have_posts()) {
+        echo '<div class="latest-local-posts">';
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            // Obtener la imagen destacada
+            $background_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            
+            echo '<a href="' . get_permalink() . '" class="post" style="background-image: url(' . esc_url($background_image) . ');">';
+            echo '<div class="post-content">';
+            echo '<h3>' . get_the_title() . '</h3>';
+            echo '</div>'; // Cerrar .post-content
+            echo '</a>'; // Cerrar el enlace <a>
+        }
+        echo '</div>'; // Cerrar .latest-local-posts
+    } else {
+        echo '<p>No recent posts in the Local category.</p>';
+    }
+
+    // Restaurar los datos originales del post
+    wp_reset_postdata();
+
+    // Retornar el contenido
+    return ob_get_clean();
+}
+
+// Registrar el shortcode
+add_shortcode('latest_local_posts', 'latest_three_local_posts');
