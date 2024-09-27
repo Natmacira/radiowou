@@ -139,11 +139,12 @@ function custom_banner_shortcode($atts)
     ), $atts, 'custom_banner');
 
     // Build the banner output
-    $output = '<div class="catastrophe-banner">';
-
+    $output = '<div class="catastrophe-banner last-program">';
+            
     // Image on the left (70%) and linked to the provided link
     if (!empty($atts['image'])) {
         $output .= '<div class="catastrophe-image" style="float: left;">';
+        $output .= '<p>Último programa</p>';
         $output .= '<a href="' . esc_url($atts['link']) . '">';
         $output .= '<img src="' . esc_url($atts['image']) . '" alt="' . esc_attr($atts['title']) . '">';
         $output .= '</a>';

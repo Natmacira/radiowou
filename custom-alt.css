@@ -21,14 +21,9 @@
 .catastrophe-banner {
     background: linear-gradient(to bottom,
             #01236AE5 70%,
-            /* El color oscuro predomina en el 70% del fondo */
             rgba(1, 35, 106, 0.8) 85%,
-            /* Aclarado sutil en el último tercio */
             rgba(1, 35, 106, 0.6) 95%,
-            /* Un poco más claro hacia el final */
-            rgba(1, 35, 106, 0.5) 100%
-            /* Degradado suave en el borde final */
-        );
+            rgba(1, 35, 106, 0.5) 100%);
 
     margin: 0 -1000px;
     display: flex;
@@ -136,4 +131,31 @@ div.catastrophe-image img {
 .qodef-header-vertical .qodef-vertical-menu>ul>li>a span.item_text {
     font-size: 20px;
     color: white;
+}
+
+.catastrophe-banner.last-program {
+    background-color: #01236AE5;
+    margin: 0 auto;
+    top: 0;
+    margin-bottom: 25px;
+    padding: 15px 0;
+}
+
+@media (min-width:770px) {
+    .catastrophe-banner.last-program {
+        justify-content: flex-start;
+    }
+}
+
+.catastrophe-banner.last-program img {
+    max-width: 400px;
+}
+
+.catastrophe-banner.last-program div.catastrophe-image p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.catastrophe-banner.last-program div.catastrophe-image {
+    padding: 0 25px;
 }
