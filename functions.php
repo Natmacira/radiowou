@@ -1,6 +1,9 @@
 <?php
 // Cargar otros estilos adicionales
-wp_enqueue_style('skeleton-style', QODE_ASSETS_ROOT . '/css/custom-alt.css');
+// wp_enqueue_style('skeleton-style', QODE_ASSETS_ROOT . '/css/custom-alt.css');
+wp_enqueue_style('custom-alt-style', get_stylesheet_directory_uri() . 'css/custom-alt.css', array('child-style'));
+
+
 
 /// custom ALT
 
