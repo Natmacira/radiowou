@@ -126,11 +126,17 @@ div.catastrophe-image img {
 .menu-main-menu .item_text {
     font-size: 20px;
     color: white;
+    text-shadow: 0px 0px 15px #000000CC;
 }
 
 .qodef-header-vertical .qodef-vertical-menu>ul>li>a span.item_text {
     font-size: 20px;
     color: white;
+    text-shadow: 0px 0px 15px #000000CC;
+}
+
+.qodef-header-vertical .qodef-vertical-menu>ul>li>a span.item_text:hover {
+    color: #01236AE5;
 }
 
 .catastrophe-banner.last-program {
