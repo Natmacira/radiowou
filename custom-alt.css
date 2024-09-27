@@ -2,7 +2,7 @@
     background-color: #01236AE5;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #player-header h4 {
@@ -10,7 +10,7 @@
 }
 
 #player-header .plyr--audio .plyr__controls {
-    background-color: #01236AE5;
+    background: none;
     color: white;
 }
 
@@ -23,9 +23,30 @@
     margin: 0 -1000px;
     display: flex;
     justify-content: center;
+    align-items: end;
+    padding: 25px 0;
+    position: relative;
+    top: -85px;
+    padding-top: 75px;
+
 }
+
 .catastrophe-banner h2,
 .catastrophe-banner p {
     color: white;
 
 }
+
+div.catastrophe-image img {
+    padding-right: 20px;
+}
+
+.qodef-wrapper {
+    top: -25px;
+}
+
+.banner-home-container .vc_column-inner{
+    padding-top: 0 !important;
+    padding-bottom: 50px;
+}
+
