@@ -198,3 +198,12 @@ add_shortcode('custom_banner', 'custom_banner_shortcode');
 //     date="September 25, 2024" 
 //     excerpt="This is a custom excerpt for the banner." 
 //     youtube_url="https://youtube.com/watch?v=example"]
+
+
+
+// Ocultar warnings en WordPress
+add_action('wp_loaded', function() {
+    // Ajusta el nivel de reporting para evitar warnings
+    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+    ini_set('display_errors', 0); // Desactiva la impresión de errores en pantalla
+});

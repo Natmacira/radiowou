@@ -263,3 +263,22 @@ footer p {
 .qodef-page-footer div.qodef-footer-bottom-holder p span span.heart{
     color: red;
 }
+
+
+/* contact page */
+
+/* .contact-section-container {
+    margin: 0 66px;
+} */
+form.wpcf7-form.init.cf7_custom_style_2 label{
+    font-size: 20px;
+    font-weight: bold;
+}
+form.wpcf7-form.init.cf7_custom_style_2 input[type=submit]{
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    background-color: #01236A;
+    border-radius: 4px;
+}
