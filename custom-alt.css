@@ -310,3 +310,8 @@ body.page-id-992 .qodef-sidebar-holder {
 body.single.single-post .aligncenter {
     margin: inherit;
 }
+
+.qodef-post-single-info-in-left-corner .qodef-news-post-top-holder {
+    position: static;
+    margin-bottom: 40px;
+}
