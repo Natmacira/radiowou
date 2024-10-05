@@ -177,6 +177,7 @@ span.item_outer span.item_text {
     color: white;
     text-shadow: 0px 0px 15px #000000CC;
 }
+
 span.item_outer span.item_text:hover {
     color: #01236AE5;
 
@@ -247,7 +248,7 @@ footer p {
 
 /* .contact-text {} */
 
-.div-latest-local-posts-container p{
+.div-latest-local-posts-container p {
     color: #7A7878;
     font-size: 20px;
     font-weight: bold;
@@ -257,10 +258,11 @@ footer p {
     background-color: #04B7B3;
 }
 
-.qodef-page-footer div.qodef-footer-bottom-holder p span{
+.qodef-page-footer div.qodef-footer-bottom-holder p span {
     color: black;
 }
-.qodef-page-footer div.qodef-footer-bottom-holder p span span.heart{
+
+.qodef-page-footer div.qodef-footer-bottom-holder p span span.heart {
     color: red;
 }
 
@@ -270,11 +272,13 @@ footer p {
 .contact-section-container {
     margin: 0 66px;
 }
-form.wpcf7-form.init.cf7_custom_style_2 label{
+
+form.wpcf7-form.init.cf7_custom_style_2 label {
     font-size: 20px;
     font-weight: bold;
 }
-form.wpcf7-form.init.cf7_custom_style_2 input[type=submit]{
+
+form.wpcf7-form.init.cf7_custom_style_2 input[type=submit] {
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -314,4 +318,99 @@ body.single.single-post .aligncenter {
 .qodef-post-single-info-in-left-corner .qodef-news-post-top-holder {
     position: static;
     margin-bottom: 40px;
+}
+
+/* .qodef-post-has-media.qodef-item-space.post.type-post.status-publish.format-standard.has-post-thumbnail div.qodef-post-content div.qodef-post-heading div.qodef-post-image {
+    height: 196px;
+} */
+
+.qodef-blog-holder article div.qodef-post-image {
+    display: block;
+
+}
+
+.qodef-blog-holder article div.qodef-post-image a {
+    width: 100%;
+    /* O el ancho que desees */
+    height: 300px;
+    /* El alto que desees */
+    overflow: hidden;
+    /* Para recortar la imagen que se sale del contenedor */
+    display: block;
+}
+
+.qodef-blog-holder article div.qodef-post-image a img {
+    width: 100%;
+    /* O también puede ser un valor fijo como 200px */
+    height: 100%;
+    object-fit: cover;
+    /* Esto mantiene las proporciones de la imagen y la recorta para que encaje en el contenedor */
+}
+
+.qodef-post-excerpt-holder {
+    height: 51px;
+}
+
+body.archive.category .qodef-btn.qodef-btn-solid {
+    background-color: #01236A;
+    border-radius: 4px;
+}
+
+a.qodef-blog-single-prev,
+a.qodef-blog-single-next,
+.qodef-icon-stack {
+    background-color: #01236A;
+    border-radius: 4px;
+}
+.qodef-blog-single-prev,
+.qodef-blog-single-next,
+.qodef-icon-stack {
+    background-color: #01236A;
+    border-radius: 4px;
+}
+
+.qodef-blog-single-navigation .qodef-blog-single-prev {
+    background-color: #01236A;
+}
+.qodef-blog-single-navigation .qodef-blog-single-next {
+    background-color: #01236A;
+}
+
+.qodef-news-reactions-holder {
+    display: none;
+}
+
+.qodef-blog-holder article .qodef-post-info-bottom .qodef-post-info-bottom-right {
+    display: none;
+}
+
+.qodef-blog-holder article .qodef-post-info-bottom .qodef-tags-holder span.qodef-tags-text {
+    color: #7A7878;
+    display: block;
+}
+
+.qodef-blog-holder article .qodef-post-info-bottom .qodef-post-info-bottom-left {
+    width: 100%;
+}
+
+#qodef-back-to-top .qodef-icon-stack {
+    background-color: #01236A;
+}
+
+.qodef-related-post-inner div.qodef-related-post-image a {
+    width: 100%;
+    /* O el ancho que desees */
+    height: 200px;
+    /* El alto que desees */
+    overflow: hidden;
+    /* Para recortar la imagen que se sale del contenedor */
+    display: block;
+}
+
+.qodef-related-post-inner div.qodef-related-post-image a img {
+    width: 100%;
+    /* O también puede ser un valor fijo como 200px */
+    height: 100%;
+    object-fit: cover;
+    /* Esto mantiene las proporciones de la imagen y la recorta para que encaje en el contenedor */
 }
