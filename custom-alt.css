@@ -294,3 +294,19 @@ form.wpcf7-form.init.cf7_custom_style_2 input[type=submit]{
 body.page-id-992 .qodef-sidebar-holder {
     margin-top: 50px;
 }
+
+
+.qodef-post-single-info-in-left-corner .qodef-news-post-top-holder .qodef-news-post-top-table-cell {
+    width: 100%;
+    top: 0;
+    bottom: auto;
+}
+
+.qodef-post-single-info-in-left-corner .qodef-news-post-top-holder .qodef-top-part-post-image {
+    margin-top: 180px;
+    text-align: left;
+}
+
+body.single.single-post .aligncenter {
+    margin: inherit;
+}
