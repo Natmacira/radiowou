@@ -267,9 +267,9 @@ footer p {
 
 /* contact page */
 
-/* .contact-section-container {
+.contact-section-container {
     margin: 0 66px;
-} */
+}
 form.wpcf7-form.init.cf7_custom_style_2 label{
     font-size: 20px;
     font-weight: bold;
@@ -281,4 +281,16 @@ form.wpcf7-form.init.cf7_custom_style_2 input[type=submit]{
     color: white;
     background-color: #01236A;
     border-radius: 4px;
+}
+
+.qodef-title-holder.qodef-centered-type.qodef-has-bg-image.qodef-bg-parallax.lazyloaded {
+    display: none;
+}
+
+.side-banner {
+    margin-top: 60px;
+}
+
+body.page-id-992 .qodef-sidebar-holder {
+    margin-top: 50px;
 }
