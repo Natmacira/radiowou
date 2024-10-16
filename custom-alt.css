@@ -193,7 +193,7 @@ span.item_outer span.item_text:hover {
     background-color: #01236AE5;
     margin: 0 auto;
     top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding: 15px 0;
 }
 
@@ -221,7 +221,7 @@ span.item_outer span.item_text:hover {
 }
 
 @media (min-width:770px) {
-    .catastrophe-content.last-program .catastrophe-content{
+    .catastrophe-content.last-program .catastrophe-content {
         margin-left: 0;
     }
 }
@@ -262,14 +262,15 @@ footer p {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 @media (min-width:770px) {
-.catastrophe-banner.last-program .catastrophe-image {
-    width: 75%;
-    padding-top: 29.5%;
-    margin-left: 16px;
-    margin-bottom: 52px;
-    margin-right: 24px;
-    margin-top: -10px;
+    .catastrophe-banner.last-program .catastrophe-image {
+        width: 75%;
+        padding-top: 29.5%;
+        margin-left: 16px;
+        margin-bottom: 52px;
+        margin-right: 24px;
+        margin-top: -10px;
     }
 }
 
@@ -472,8 +473,44 @@ a.qodef-blog-single-next,
 
 .qodef-related-post-inner div.qodef-related-post-image a img {
     width: 100%;
-    /* O también puede ser un valor fijo como 200px */
     height: 100%;
     object-fit: cover;
-    /* Esto mantiene las proporciones de la imagen y la recorta para que encaje en el contenedor */
+}
+
+/* SEARCHFORM */
+
+.searchform {
+    position: relative;
+    top: 124px;
+}
+
+.searchform .input-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchform .input-holder input {
+    max-width: 125px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-color: transparent;
+    padding: 4px;
+    color: #878181;
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 5.1px;
+
+}
+
+.searchform .input-holder button {
+    background-color: white;
+    border-color: transparent;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 4px;
+}
+
+.searchform .input-holder button .qodef-icon-font-awesome.fa.fa-search {
+    color: #04B7B3;
 }
