@@ -41,14 +41,14 @@ function catastrophe_banner_shortcode($atts)
 			// Build the banner output
 			$output = '<div class="catastrophe-banner">';
 
-			// Image on the left (70%) and linked to the post
+			// Image on the left and linked to the post
 			$output .= '<div class="catastrophe-image" style="float: left;">';
 			$output .= '<a href="' . esc_url($link) . '">';
 			$output .= '<img src="' . esc_url($image) . '" alt="' . esc_attr($title) . '">';
 			$output .= '</a>';
 			$output .= '</div>';
 
-			// Content on the right (30%)
+			// Content on the right 
 			$output .= '<div class="catastrophe-content">';
 
 			if (!empty($atts['youtube_url'])) {
@@ -131,25 +131,93 @@ function latest_three_local_posts() {
 // Registrar el shortcode
 add_shortcode('latest_local_posts', 'latest_three_local_posts');
 
+// // Register the shortcode ORIGINAL
+// function custom_banner_shortcode($atts)
+// {
+//     // Define attributes and set defaults
+//     $atts = shortcode_atts(array(
+//         'title' => '',        // The title entered by the client
+//         'link' => '',         // The URL to link to
+//         'image' => '',        // The image URL
+//         'date' => '',         // The date (optional)
+//         'excerpt' => '',      // Manual excerpt
+//         'youtube_url' => '',  // YouTube link
+//     ), $atts, 'custom_banner');
+
+//     // Build the banner output
+//     $output = '<div class="catastrophe-banner last-program">';
+            
+//     // Image on the left  and linked to the provided link
+//     if (!empty($atts['image'])) {
+//         $output .= '<div class="catastrophe-image" style="float: left;">';
+//         $output .= '<p>Último programa</p>';
+//         $output .= '<a href="' . esc_url($atts['link']) . '">';
+//         $output .= '<img src="' . esc_url($atts['image']) . '" alt="' . esc_attr($atts['title']) . '">';
+//         $output .= '</a>';
+//         $output .= '</div>';
+//     }
+
+//     // Content on the right 
+//     $output .= '<div class="catastrophe-content">';
+
+//     // YouTube button
+//     if (!empty($atts['youtube_url'])) {
+//         $output .= '<a href="' . esc_url($atts['youtube_url']) . '" class="catastrophe-youtube-btn" target="_blank">';
+//         $output .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/play-btn.png') . '" alt="Watch on YouTube">';
+//         $output .= '</a>';
+//     }
+
+//     // Title with link
+//     if (!empty($atts['title'])) {
+//         $output .= '<h2 class="catastrophe-title"><a href="' . esc_url($atts['link']) . '">' . esc_html($atts['title']) . '</a></h2>';
+//     }
+
+//     // Date (optional)
+//     if (!empty($atts['date'])) {
+//         $output .= '<p class="catastrophe-date">' . esc_html($atts['date']) . '</p>';
+//     }
+
+//     // Excerpt
+//     if (!empty($atts['excerpt'])) {
+//         $output .= '<p class="catastrophe-excerpt">' . esc_html($atts['excerpt']) . '</p>';
+//     }
+
+//     $output .= '</div>'; // End content div
+//     $output .= '<div style="clear: both;"></div>'; // Clear floats
+//     $output .= '</div>'; // End banner div
+
+//     return $output;
+// }
+// add_shortcode('custom_banner', 'custom_banner_shortcode');
+
+
 // Register the shortcode
 function custom_banner_shortcode($atts)
 {
     // Define attributes and set defaults
     $atts = shortcode_atts(array(
         'title' => '',        // The title entered by the client
-        'link' => '',         // The URL to link to
+        'link' => '',         // Optional link for the image
         'image' => '',        // The image URL
         'date' => '',         // The date (optional)
         'excerpt' => '',      // Manual excerpt
-        'youtube_url' => '',  // YouTube link
+        'youtube_id' => '',   // YouTube video ID (optional)
     ), $atts, 'custom_banner');
+
+    // Generate the YouTube link using the YouTube ID
+    $youtube_url = !empty($atts['youtube_id']) ? 'https://www.youtube.com/watch?v=' . esc_attr($atts['youtube_id']) : '';
 
     // Build the banner output
     $output = '<div class="catastrophe-banner last-program">';
-            
-    // Image on the left (70%) and linked to the provided link
-    if (!empty($atts['image'])) {
-        $output .= '<div class="catastrophe-image" style="float: left;">';
+
+    // If YouTube ID is provided, display iframe; if not, show image
+    if (!empty($atts['youtube_id'])) {
+        $output .= '<div class="catastrophe-image">';
+        $output .= '<p>Último programa</p>';
+        $output .= '<iframe width="100%" height="315" src="https://www.youtube.com/embed/' . esc_attr($atts['youtube_id']) . '" frameborder="0" allowfullscreen></iframe>';
+        $output .= '</div>';
+    } elseif (!empty($atts['image'])) {
+        $output .= '<div class="catastrophe-image">';
         $output .= '<p>Último programa</p>';
         $output .= '<a href="' . esc_url($atts['link']) . '">';
         $output .= '<img src="' . esc_url($atts['image']) . '" alt="' . esc_attr($atts['title']) . '">';
@@ -157,18 +225,24 @@ function custom_banner_shortcode($atts)
         $output .= '</div>';
     }
 
-    // Content on the right (30%)
+    // Content on the right side
     $output .= '<div class="catastrophe-content">';
 
     // YouTube button
-    if (!empty($atts['youtube_url'])) {
-        $output .= '<a href="' . esc_url($atts['youtube_url']) . '" class="catastrophe-youtube-btn" target="_blank">';
+    if (!empty($atts['youtube_id'])) {
+        $output .= '<a href="' . esc_url($youtube_url) . '" class="catastrophe-youtube-btn" target="_blank">';
+        $output .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/play-btn.png') . '" alt="Watch on YouTube">';
+        $output .= '</a>';
+    } else {
+        $output .= '<a href="' . esc_url($atts['link']) . '" class="catastrophe-youtube-btn" target="_blank">';
         $output .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/play-btn.png') . '" alt="Watch on YouTube">';
         $output .= '</a>';
     }
 
-    // Title with link
-    if (!empty($atts['title'])) {
+    // Title with YouTube link
+    if (!empty($atts['title']) && !empty($atts['youtube_id'])) {
+        $output .= '<h2 class="catastrophe-title"><a href="' . esc_url($youtube_url) . '">' . esc_html($atts['title']) . '</a></h2>';
+    } elseif (!empty($atts['title'])) {
         $output .= '<h2 class="catastrophe-title"><a href="' . esc_url($atts['link']) . '">' . esc_html($atts['title']) . '</a></h2>';
     }
 
@@ -183,12 +257,20 @@ function custom_banner_shortcode($atts)
     }
 
     $output .= '</div>'; // End content div
-    $output .= '<div style="clear: both;"></div>'; // Clear floats
+    $output .= '<div style="clear: both;"></div>'; // Clear floats (if any)
     $output .= '</div>'; // End banner div
 
     return $output;
 }
 add_shortcode('custom_banner', 'custom_banner_shortcode');
+
+// [custom_banner 
+//     title="Título del programa" 
+//     link="" 
+//     image="https://example.com/image.jpg" 
+//     date="15 de Octubre, 2024" 
+//     excerpt="Este es un resumen del programa." 
+//     youtube_id="dQw4w9WgXcQ"]
 
 
 // [custom_banner 
