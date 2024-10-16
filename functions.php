@@ -233,7 +233,7 @@ function custom_banner_shortcode($atts)
         $output .= '<a href="' . esc_url($youtube_url) . '" class="catastrophe-youtube-btn" target="_blank">';
         $output .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/play-btn.png') . '" alt="Watch on YouTube">';
         $output .= '</a>';
-    } else {
+    } elseif (empty($atts['youtube_id']) && (!empty($atts['link'])) ) {
         $output .= '<a href="' . esc_url($atts['link']) . '" class="catastrophe-youtube-btn" target="_blank">';
         $output .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/play-btn.png') . '" alt="Watch on YouTube">';
         $output .= '</a>';
