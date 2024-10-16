@@ -289,3 +289,7 @@ add_shortcode('custom_banner', 'custom_banner_shortcode');
 //     error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 //     ini_set('display_errors', 0); // Desactiva la impresión de errores en pantalla
 // });
+
+add_action( 'ebullient_qodef_before_top_navigation', function() {
+    get_search_form();
+}, 10, 2);
