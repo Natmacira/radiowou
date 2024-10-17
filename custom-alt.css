@@ -371,6 +371,7 @@ body.page-id-992 aside.qodef-sidebar {
     justify-content: center;
 }
 
+/* SINGLE POSTS */
 
 .qodef-post-single-info-in-left-corner .qodef-news-post-top-holder .qodef-news-post-top-table-cell {
     width: 100%;
@@ -385,6 +386,17 @@ body.page-id-992 aside.qodef-sidebar {
 
 body.single.single-post .aligncenter {
     margin: inherit;
+}
+
+body.single.single-post .qodef-container{
+    top: -155px;
+}
+
+@media (min-width:770px) {
+
+    body.single.single-post .qodef-container{
+        top: 0;
+    }
 }
 
 .qodef-post-single-info-in-left-corner .qodef-news-post-top-holder {
@@ -491,7 +503,7 @@ a.qodef-blog-single-next,
 
 .searchform {
     position: relative;
-    top: 29px;
+    top: 10px;
     z-index: 1000;
 }
 
