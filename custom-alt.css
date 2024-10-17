@@ -83,7 +83,7 @@ div.catastrophe-image img {
         padding-right: 20px;
         max-width: 100%;
         margin-bottom: 0;
-
+        width: 600px;
     }
 }
 
@@ -331,9 +331,11 @@ footer p {
 
 
 /* contact page */
+@media (min-width:770px) {
 
-.contact-section-container {
-    margin: 0 66px;
+    .contact-section-container {
+        margin: 0 66px;
+    }
 }
 
 form.wpcf7-form.init.cf7_custom_style_2 label {
@@ -360,6 +362,13 @@ form.wpcf7-form.init.cf7_custom_style_2 input[type=submit] {
 
 body.page-id-992 .qodef-sidebar-holder {
     margin-top: 50px;
+}
+
+body.page-id-992 aside.qodef-sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -482,7 +491,7 @@ a.qodef-blog-single-next,
 
 .searchform {
     position: relative;
-    top: 125px;
+    top: 29px;
     z-index: 1000;
 }
 
@@ -497,7 +506,7 @@ a.qodef-blog-single-next,
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     border-color: transparent;
-    padding: 4px;
+    padding: 5px;
     color: #878181;
     font-size: 12px;
     font-weight: 400;
