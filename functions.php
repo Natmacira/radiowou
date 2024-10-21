@@ -293,6 +293,3 @@ add_shortcode('custom_banner', 'custom_banner_shortcode');
 add_action( 'ebullient_qodef_before_top_navigation', function() {
     get_search_form();
 }, 10, 2);
-add_action( 'ebullient_qodef_before_mobile_header_html_close', function() {
-    get_search_form();
-}, 10, 2);
