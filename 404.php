@@ -46,7 +46,7 @@
 							
 							<h1>404</h1>
 							<p class="we-are-sorry">Lo sentimos. No pudimos encontrar la página</p>
-							<a href="www.wou.com.ar" class="go-back">Volver a la página de inicio</a>
+							<a href="https://wou.com.ar/" class="go-back">Volver a la página de inicio</a>
 
 							<section>
 								
