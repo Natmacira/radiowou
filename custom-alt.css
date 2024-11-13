@@ -694,3 +694,46 @@ body.single div.qodef-blog-holder.qodef-blog-single.qodef-blog-single-info-in-le
 .searchform .input-holder input:focus-visible {
     outline: none;
 }
+
+
+/* PAGE 404 */
+
+.qodef-page-not-found {
+    background-color: white;
+}
+
+body.error404 h1 {
+    color: #01236A;
+    text-align: center;
+    font-size: 96px;
+}
+
+body.error404 p.we-are-sorry {
+    margin-top: 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+}
+body.error404 a.go-back {
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: underline;
+    display: block;
+}
+
+body.error404 .qodef-404-page .qodef-page-not-found-wrapper {
+    padding: 0;
+    margin-top: 45px;
+}
+
+body.error404 .qodef-404-page .qodef-page-not-found {
+    padding: 0 25px;
+}
+
+body.error404 .qodef-404-page .qodef-content {
+    height: auto;
+    margin-top: 0 !important;
+}
